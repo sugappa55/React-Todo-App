@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Todos } from "../../TodoContext";
 import styles from "./taskHeader.module.css";
 
 const TaskHeader = () => {
   // sample values to be replaced
-  let totalTask = 0;
-  let unCompletedTask = 0;
+  const {todos}=useContext(Todos)
+  
+  let unCompletedTask=(todos.filter(e=>!e.done).length)
+  let totalTask=todos.length
 
   // NOTE: do not delete `data-testid` key value pair
   return (
     <div data-testid="task-header" className={styles.taskHeader}>
-      <b data-testid="header-remaining-task">{unCompletedTask}</b>
-      <b data-testid="header-total-task">{totalTask}</b>
+      <h1>Todo App</h1>
+      <b data-testid="header-remaining-task">Pending:{unCompletedTask}</b>{"  "}
+      <b data-testid="header-total-task">Completed:{totalTask}</b>
     </div>
   );
 };
