@@ -6,9 +6,9 @@ const Counter = ({count}) => {
   // NOTE: do not delete `data-testid` key value pair
   return (
     <div className={styles.counter}>
-      <button data-testid="task-counter-increment-button"></button>
+      <button data-testid="task-counter-increment-button"><b>+</b></button>
       <span data-testid="task-counter-value">{count}</span>
-      <button data-testid="task-counter-decrement-button"></button>
+      <button data-testid="task-counter-decrement-button"><b>-</b></button>
     </div>
   );
 };
