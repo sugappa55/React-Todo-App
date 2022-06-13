@@ -9,7 +9,7 @@ const AddTask = () => {
   const {getTodos}=useContext(Todos)
   return (
     <div className={styles.todoForm}>
-      <input data-testid="add-task-input" type="text" onChange={(e)=>setTodo(e.target.value)}/>
+      <input data-testid="add-task-input" type="text" onChange={(e)=>setTodo(e.target.value)} />
       <button data-testid="add-task-button" onClick={()=>{
         if(!todo.length)return
         axios.post("http://localhost:8080/todos",{"text": todo,
